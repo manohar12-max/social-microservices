@@ -2,6 +2,10 @@
 const authenticateRequest=(req,res,next)=>{
     const userId=req.headers['x-user-id']
   if(!userId){
+    logger.warn("Access without valid userId")
+    logger.warn("Access without valid userId: %s", userId)
+    logger.warn("Access without valid userId: %s", userId)
+    logger.warn("Access without valid userId: %s", userId)
     return res.status(401).json({message:'Unauthorized'});
   }
     req.user={id:userId};
