@@ -28,11 +28,6 @@ const mediaSchema=new mongoose.Schema({
 }
 )
 mediaSchema.index({ userId: 1 }, { unique: true }) // This index will ensure that each user has only one media
-mediaSchema.index({ publicId: 1 }, { unique: true }) // This index will ensure that each public id is unique
-mediaSchema.index({ originalName: 1 }, { unique: true }) // This index will ensure that each original name is unique
-mediaSchema.index({ mimeType: 1 }, { unique: true }) // This index will ensure that each mime type is unique
-mediaSchema.index({ url: 1 }, { unique: true }) // This index will ensure that each url is unique
-mediaSchema.index({ createdAt: 1 }) // This index will ensure that the media is sorted by created at
 const Media=mongoose.model('Media',mediaSchema);
 module.exports=Media;
 
